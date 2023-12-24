@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png/x-icon">
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="assets/css/content.css">
+        <title>BudayaKu</title>
+        
+    </head>
+<body>
+
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="index.html" class="nav_logo">
+                    <img src="assets/img/logo1.png" alt="logo" width="50%">
+                </a>
+                <div class="nav_menu" id="nav-menu">
+                    <ul class="nav_list">
+                        <li class="nav_item">
+                            <a href="index.html" class="nav_link active-link">Home</a>
+                        </li>
+                        <li class="nav_item">
+                            <a href="explore.html" class="nav_link">Explore</a>
+                        </li>
+                        <li class="nav_item">
+                            <a href="event.html" class="nav_link">Event</a>
+                        </li>
+                        <li class="nav_item">
+                            <a href="about.html" class="nav_link">About Us</a>
+                        </li>
+                    </ul>
+                    <i class="ri-close-line nav_close" id="nav-close"></i>
+                </div>
+                <div class="nav_toggle" id="nav-toggle">
+                    <i class="ri-function-line"></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="main">
+            <section class="home" id="home" style="z-index: 1;">
+                <video id="video-file-1" autoplay muted loop>
+                    <source src="assets/video/home1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="home_shadow"></div>
+                <div class="home__container container grid">
+                    <div class="home__data">
+                        <span class="home__data-subtitle">Menjelajahi</span>
+                        <h1 class="home__data-title"><b>Keberagaman dan<br> Kekayaan Budaya<br> Nusantara</b> </h1>
+                    </div>
+                    <div class="home__info">
+                        <div>
+                            <span class="home__info-title">Rekomendasi Tempat Kebudayaan</span>
+                            <a href="event.html" class="button button--flex button--link home__info-button">
+                               Jelajahi <i class="ri-arrow-right-line"></i>
+                            </a>
+                        </div>
+                        <div class="home__info-overlay">
+                            <img src="https://i.ibb.co/JxjdJ4s/waerebo.jpg" alt="" class="home__info-img">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="discover section" id="discover">
+                <div class="container teks">
+                    <h2 class="section__title">Pesona Nusantara</h2>
+                    <p class="pesona_description">
+                        Menjaga dan melestarikan kekayaan budaya Indonesia yang luar biasa melalui warisan unik 
+                        dan tradisi indah yang dibawa oleh setiap suku. Merawat harta berharga, membangun fondasi 
+                        untuk persatuan, keadilan, dan keindahan yang abadi di negeri kita yang berwarna-warni.
+                    </p>
+                </div>
+                <div class="discover__container container swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="discover__card swiper-slide">
+                            <img src="https://i.ibb.co/rkhn4Q6/da1df06bb9f492cbd99737b33a1464ea.jpg" alt="" class="discover__img">
+                            <div class="discover__data">
+                                <h2 class="discover__title">Suku Dayak</h2>
+                                <span class="discover__description"><i class="ri-map-pin-line mr-2"></i>Kalimantan</span>
+                            </div>
+                        </div>
+                        <div class="discover__card swiper-slide">
+                            <img src="https://i.ibb.co/qkQR9Zb/502e9cf5ba585dee82b5a08b78df21d4.jpg" alt="" class="discover__img">
+                            <div class="discover__data">
+                                <h2 class="discover__title">Suku Bali</h2>
+                                <span class="discover__description"><i class="ri-map-pin-line mr-2"></i>Bali</span>
+                            </div>
+                        </div>
+                        <div class="discover__card swiper-slide">
+                            <img src="https://i.ibb.co/4m7Bpbh/36df62329b1df7aa7f1aeb0acdc6b22a.jpg" alt="" class="discover__img">
+                            <div class="discover__data">
+                                <h2 class="discover__title">Suku Jawa</h2>
+                                <span class="discover__description"><i class="ri-map-pin-line mr-2"></i>Jawa Tengah</span>
+                            </div>
+                        </div>
+                        <div class="discover__card swiper-slide">
+                            <img src="https://i.ibb.co/Sn1vPBB/3da790d873099604edd1c5afaad740ea.jpg" alt="" class="discover__img">
+                            <div class="discover__data">
+                                <h2 class="discover__title">Suku Papua</h2>
+                                <span class="discover__description"><i class="ri-map-pin-line mr-2"></i>Papua</span>
+                            </div>
+                        </div>
+                        <div class="discover__card swiper-slide">
+                            <img src="https://i.ibb.co/X4q0qw2/b7fa3d827e0974c3cb917916aa9dcf3a.jpg" alt="" class="discover__img">
+                            <div class="discover__data">
+                                <h2 class="discover__title">Suku Baduy</h2>
+                                <span class="discover__description"><i class="ri-map-pin-line mr-2"></i>Lebak, Banten</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="about section" id="warisan">
+                <div class="about__container container grid exp_content">
+                    <h2 class="section__title">Warisan Budaya Indonesia</h2>
+                    <p class="exp_description"> Kekayaan sejati tidak hanya terletak pada harta dan materi, tapi juga dalam keberagaman budaya yang kita warisi. 
+                        Kebudayaan Indonesia adalah harta karun tak ternilai yang melibatkan warna, rasa, dan irama kehidupan.
+                    </p>
+                </div>
+                <div class="about__container container grid">
+                    <div class="experience__container container grid">
+                        <div class="experience__img grid">
+                            <div class="experience__overlay">
+                                <img src="https://i.ibb.co/hD5STT9/9d341-borobudur-860x484.png" alt="" class="experience__img-one">
+                            </div>
+                            <div class="experience__overlay">
+                                <img src="https://i.ibb.co/b2b3HGV/pembatik.jpg" alt="" class="experience__img-two">
+                            </div>
+                        </div>
+                    </div>
+                        <div class="video__content">
+                            <video id="video-file">
+                                <source src="assets/video/wonderful-indonesia.MP4" type="video/mp4">
+                            </video>
+                            <button class="button btn-video button--flex video__button" id="video-button">
+                                <i class="ri-play-line video__button-icon" id="video-icon"></i>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+            <section class="about section" id="about">
+                <div class="about__container container grid">
+                    <div class="about__data">
+                        <h2 class="section__title about__title">Pawai Ogoh Ogoh <br> Festival Rakyat Menjelang Nyepi</h2>
+                        <p class="about__description">Perayaan unik masyarakat Bali yang menjadi bagian dari 
+                            tradisi Hari Raya Nyepi atau Tahun Baru Saka Bali.
+                        </p>
+                        <a href="explore.html" class="button btn-event event">Jelajahi<i class="ri-arrow-right-line"></i></a>
+                    </div>
+                    <div class="about__img">
+                        <div class="about__img-overlay">
+                            <img src="https://i.ibb.co/gJ79KhL/087c1549723beb29647ae04c17b8e279.jpg" alt="" class="about__img-one">
+                        </div>
+                        
+                        <div class="about__img-overlay">
+                            <img src="https://i.ibb.co/9bQww7g/7e5f3642cd2ebbafc5b974324b0b838b.jpg" alt="" class="about__img-two">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="explore section" id="nusantara">
+                <div class="explore_container">
+                   <div class="explore_image">
+                      <img src="https://i.ibb.co/bLQNZKs/Desain-tanpa-judul.png" alt="Peta Nusantara" class="explore_img">
+                   </div>
+                   <div class="explore_content container grid">
+                      <div class="explore_data">
+                         <h2 class="explore_title">Peta Nusantara</h2>
+                      </div>
+                   </div>
+                </div>
+             </section>
+
+            <section class="popular section">
+                <div class="about__container explore-cont container grid">
+                    <h2 class="explore_title">Explore</h2>
+                    <a href="explore.html" class="btn-exp">Mulai Menjelajah<i class="ri-arrow-right-line"></i></a>
+                </div>
+                <div class="popular_container1 container grid">
+                    <div id="explorer" style="cursor: pointer;"></div>
+                </div>
+             </section>
+
+            <section class="subscribe section">
+                <div class="subscribe__bg">
+                    <div class="subscribe__container container">
+                        <h2 class="section__title subscribe__title">Ceritakan<br> Kebudayaan daerah anda</h2>
+                        <p class="subscribe__description">
+                            Kirim cerita kebudayaan dari daerah anda
+                        </p>
+                        <form id="search-form" autocomplete="off">
+                            <input type="search" id="search-input" placeholder="Send">
+                            <button title="s" class="send" type="button">
+                              <i class="fa-regular fa-paper-plane"></i>
+                            </button>
+                          </form>                      
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+        <footer class="footer section">
+            <div class="footer__container container grid">
+                <div class="footer__content grid">
+                    <div class="footer__data">
+                        <h3 class="footer__title">BudayaKu</h3>
+                        <p class="footer__description">
+                            Lahir dari tekad untuk merayakan, melestarikan, dan memajukan kekayaan budaya Indonesia.
+                        </p>
+                    </div>
+                    <div class="footer__data">
+                        <h3 class="footer__subtitle">What to See</h3>
+                        <ul>
+                            <li class="footer__item">
+                                <a href="explore.html" class="footer__link">Explore</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="event.html#event" class="footer__link">Event</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="event.html" class="footer__link">Rekomendasi</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__data">
+                        <h3 class="footer__subtitle">About</h3>
+                        <ul>
+                            <li class="footer__item">
+                                <a href="#warisan" class="footer__link">Warisan</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="#nusantara" class="footer__link">Nusantara</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="about.html" class="footer__link">About BudayaKu</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__data">
+                        <h3 class="footer__subtitle">Support</h3>
+                        <div>
+                            <a href="" target="_blank" class="footer__social">
+                                <i class="ri-facebook-box-fill"></i>
+                            </a>
+                            <a href="" target="_blank" class="footer__social">
+                                <i class="ri-twitter-fill"></i>
+                            </a>
+                            <a href="" target="_blank" class="footer__social">
+                                <i class="ri-instagram-fill"></i>
+                            </a>
+                            <a href="" target="_blank" class="footer__social">
+                                <i class="ri-youtube-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__rights">
+                    <p class="footer__copy">&#169; 2023 BudayaKu. All rigths reserved.</p>
+                    <div class="footer__terms">
+                        <a href="" class="footer__terms-link">Terms & Agreements</a>
+                        <a href="" class="footer__terms-link">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <div class="modal-container" id="modal-container">
+            <div class="modal-inner">
+                <div class="btn-close" onclick="closeModal(event)">
+                    <ion-icon name="close-outline"></ion-icon>
+                </div>
+            </div>
+         </div>
+
+        <div id="notification"></div>
+
+        <a href="" class="scrollup" id="scroll-up">
+            <i class="ri-arrow-up-line scrollup__icon"></i>
+        </a>
+
+        <script src="https://kit.fontawesome.com/3ef597ef79.js" crossorigin="anonymous"></script>
+        <script src="assets/js/scrollreveal.min.js"></script>
+        <script src="assets/js/swiper-bundle.min.js"></script>
+        <script src="assets/js/main.js"></script>
+        
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+            let button = document.getElementById("scroll-up");
+
+            if (button) {
+                button.style.display = "none";
+
+                window.addEventListener("scroll", function () {
+                    scrollFunction();
+                });
+
+                button.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    backToTop();
+                });
+            }
+
+            function scrollFunction() {
+                let scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+                if (scrollTop > 20) {
+                    button.style.display = "block";
+                } else {
+                    button.style.display = "none";
+                }
+            }
+
+            function backToTop() {
+                setTimeout(function () {
+                    window.requestAnimationFrame(function () {
+                        document.documentElement.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    });
+                }, 300);
+            }
+        });
+        
+        document.addEventListener('DOMContentLoaded', function () {
+            var sendButton = document.querySelector('.send');
+            var notificationDiv = document.getElementById('notification');
+            var searchInput = document.getElementById('search-input');
+
+            sendButton.addEventListener('click', function () {
+                var inputText = searchInput.value.trim();
+
+                if (inputText !== '') {
+                var newNotification = document.createElement('div');
+                newNotification.className = 'notification';
+                newNotification.innerHTML = '<i class="fa-regular fa-paper-plane"></i> Pesan Terkirim!';
+
+                notificationDiv.appendChild(newNotification);
+                notificationDiv.style.display = 'block';
+
+                searchInput.value = '';
+
+                setTimeout(function () {
+                    notificationDiv.removeChild(newNotification);
+                    notificationDiv.style.display = 'none';
+                }, 3000);
+                }
+            });
+
+            searchInput.addEventListener('input', function () {
+                sendButton.disabled = searchInput.value.trim() === '';
+            });
+        });
+        </script>
+
+        <script>
+            let explorer = {
+    data: [
+            {
+                category: "Tari",
+                image: "https://i.ibb.co/4WSdb5Z/turonggo-yakso.jpg",
+                name: "Turonggo Yakso",
+                location: "Trenggalek, Jawa Timur",
+                pageContent: "<p style='text-indent: 45px;'>Tari Turonggo Yakso, berasal dari Trenggalek, Jawa Timur, adalah perwujudan kekayaan budaya dan tradisi masyarakat lokal. Dipentaskan dalam berbagai konteks seperti upacara adat, seni, dan perayaan kebudayaan, tarian ini mengekspresikan keindahan khas Jawa Timur melalui gerakan lincah, ekspresi tangan yang indah, dan musik pengiring yang melibatkan kekayaan tradisional wilayah tersebut.</p> <br> <p style='text-indent: 45px';>Selain menjadi hiburan, Tari Turonggo Yakso berfungsi sebagai sarana untuk melestarikan dan memperkenalkan kekayaan budaya Jawa Timur kepada masyarakat, menjadikannya bagian yang tak terpisahkan dari warisan budaya yang dijaga dan dihargai oleh masyarakat Trenggalek.</p>",
+            },
+            {
+                category: "Acara",
+                image: "https://i.ibb.co/RN0cMfj/karapan-sapi.jpg",
+                name: "Karapan Sapi",
+                location: "Madura, Jawa Timur",
+                pageContent: "<p style='text-indent: 45px;'>Kerapan Sapi Madura adalah tradisi unik di Pulau Madura, Indonesia, yang menggabungkan keterampilan mengendarai kerbau dengan kompetisi kecepatan. Dalam perhelatan ini, sepasang kerbau yang dihias dan dikendarai oleh seorang pengendara bersaing untuk mencapai garis finish tercepat di lintasan tanah. Para pengendara, yang disebut 'jawara' menunjukkan keahlian mengendalikan kerbaunya sambil berlomba untuk meraih kemenangan.</p><br></p>",
+            },
+            {
+                category: "Tari",
+                image: "https://i.ibb.co/Pg02MyJ/2eeacc48af947b925a97e6c305089b92.jpg",
+                name: "Tari Jaipong",
+                location: "Jawa Barat",
+                pageContent: "<p style='text-indent: 45px;'>Tari Jaipong adalah tarian tradisional yang berasal dari Jawa Barat, Indonesia. Tarian ini diilhami oleh kekayaan seni dan budaya Sunda, menggabungkan gerakan tari tradisional dengan unsur-unsur modern. Jaipong mengutamakan gerakan tubuh yang dinamis, ekspressif, dan penuh semangat, seringkali disertai dengan irama musik yang khas.</p><br><p style='text-indent: 45px;'>Tari Jaipong awalnya dikembangkan oleh seniman Gugum Gumbira pada tahun 1960-an sebagai bentuk seni rakyat yang menggabungkan elemen tarian tradisional dengan musik modern. Kini, Jaipong menjadi populer di berbagai pertunjukan seni dan acara kebudayaan di Indonesia, serta menjadi bagian yang integral dalam pelestarian dan pengembangan warisan seni tradisional Sunda.</p>",
+            },
+            {
+                category: "Candi",
+                image: "https://i.ibb.co/JRpFsK7/image.png",
+                name: "Candi Singosari",
+                location: "Malang, Jawa Timur",
+                pageContent: "<p style='text-indent: 45px;'>Candi Singosari adalah kompleks candi yang terletak di Desa Candirenggo, Kecamatan Singosari, Kabupaten Malang, Jawa Timur, Indonesia. Candi ini berasal dari masa Kerajaan Singosari pada abad ke-13 dan dianggap sebagai peninggalan sejarah yang penting.</p><br><p style='text-indent: 45px;'>Candi Singosari terdiri dari beberapa candi kecil yang saling berdekatan, termasuk Candi Singosari, Candi Jago, dan Candi Kidal. Candi-candi ini mencerminkan gaya arsitektur candi Hindu, dengan relief-relief yang menggambarkan adegan-kehidupan sehari-hari, tokoh-tokoh epik, dan ajaran-ajaran agama Hindu.</p>",
+            },
+    ],
+};
+
+let popularContainer = document.createElement("div");
+popularContainer.classList.add("popular_container", "container", "grid");
+
+document.getElementById("explorer").appendChild(popularContainer);
+
+for (let i of explorer.data) {
+   let article = document.createElement("article");
+   article.classList.add("popular_card", i.category.toLowerCase());
+
+   let linkArticle = document.createElement("a");
+   article.setAttribute("data-item", JSON.stringify(i));
+   linkArticle.addEventListener("click", () => openModal(i));
+
+   let imgContainer = document.createElement("div");
+   imgContainer.classList.add("popular_image");
+
+   let image = document.createElement("img");
+   image.setAttribute("src", i.image);
+   image.classList.add("popular_img");
+
+   image.style.maxWidth = "100%";
+   image.style.height = "auto";
+   image.style.width = "300px";
+
+   let shadow = document.createElement("div");
+   shadow.classList.add("popular_shadow");
+
+   imgContainer.appendChild(image);
+   imgContainer.appendChild(shadow);
+
+   linkArticle.appendChild(imgContainer);
+   article.appendChild(linkArticle);
+
+   let title = document.createElement("h2");
+   title.classList.add("popular_title");
+   title.innerText = i.name;
+
+   title.addEventListener("click", () => openModal(i));
+
+   article.appendChild(title);
+
+   let location = document.createElement("div");
+   location.classList.add("popular_location");
+
+   let mapPinIcon = document.createElement("i");
+   mapPinIcon.classList.add("ri-map-pin-line");
+
+   let locationSpan = document.createElement("span");
+   locationSpan.innerText = i.location;
+
+   location.appendChild(mapPinIcon);
+   location.appendChild(locationSpan);
+
+   article.appendChild(location);
+   popularContainer.appendChild(article);
+}
+
+function openModal(item) {
+   console.log("Opening modal for item:", item);
+
+   let modalContainer = document.getElementById("modal-container");
+   modalContainer.innerHTML = ""; 
+
+   let modal = document.createElement("div");
+   modal.classList.add("modal");
+
+   let closeModalButton = document.createElement("span");
+   closeModalButton.classList.add("close-modal");
+   closeModalButton.innerHTML = "&times;";
+   closeModalButton.addEventListener("click", () => closeModal());
+
+   let modalContent = document.createElement("div");
+   modalContent.classList.add("modal-content");
+
+   modalContent.innerHTML = `
+      <div class="modal-image">
+            <img src="${item.image}" alt="${item.name}" class="modal-img">
+      </div>
+      <div class="modal-description">
+            <h2>${item.name}</h2>
+            <p>${item.pageContent}</p>
+      </div>
+   `;
+
+   modal.appendChild(closeModalButton);
+   modal.appendChild(modalContent);
+   modalContainer.appendChild(modal);
+
+   modalContainer.classList.add("active-modal");
+}
+
+function closeModal() {
+   let modalContainer = document.getElementById("modal-container");
+   modalContainer.classList.remove("active-modal");
+   document.body.style.overflow = "auto";
+   event.preventDefault();
+}
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+    closeModal();
+    }
+});
+
+let article = document.createElement("article");
+article.classList.add("popular_card", i.category.toLowerCase());
+article.setAttribute("data-item", JSON.stringify(i));
+
+article.addEventListener("click", () => openModal(i));
+
+function closeModal() {
+   let modalContainer = document.getElementById("modal-container");
+   modalContainer.classList.remove("active-modal");
+   document.body.style.overflow = "auto";
+   event.preventDefault();
+}
+        </script>
+    </body>
+</html>

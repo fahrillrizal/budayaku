@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en" id="home">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/content.css">
+    <link rel="stylesheet" href="assets/css/tab.css">
+    <title>Explore</title>
+</head>
+<body>
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav_logo">
+                <img src="assets/img/logo1.png" alt="logo" width="50%">
+            </a>
+            <div class="nav_menu" id="nav-menu">
+                <ul class="nav_list">
+                    <li class="nav_item">
+                        <a href="index.html" class="nav_link">Home</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="explore.html" class="nav_link active-link">Explore</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="event.html" class="nav_link">Event</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="about.html" class="nav_link">About Us</a>
+                    </li>
+                </ul>
+                <i class="ri-close-line nav_close" id="nav-close"></i>
+            </div>
+            <div class="nav_toggle" id="nav-toggle">
+                <i class="ri-function-line"></i>
+            </div>
+        </nav>
+    </header>
+
+    <div class="title_explore" style="margin-top: 7rem;">
+        <h4>Go Explore</h4>
+    </div>
+        <section class="popular section explore-container">
+            <div class="wrapper">
+                <div id="search-container">
+                    <input type="search" id="search-input" placeholder="Cari" autocomplete="off">
+                    <button title="search" id="search" onclick="filterBySearch()"><i class="ri-search-line"></i></button>
+                </div>
+                <div id="buttons">
+                    <button class="button-value" onclick="filterExplore('all')">All</button>
+                    <button class="button-value" onclick="filterExplore('Candi')">Candi</button>
+                    <button class="button-value" onclick="filterExplore('Tari')">Tari</button>
+                    <button class="button-value" onclick="filterExplore('Warisan')">Warisan</button>
+                    <button class="button-value" onclick="filterExplore('Acara')">Acara</button>
+                </div>
+            </div>
+            <div id="explorer" style="cursor: pointer;"></div>
+            <div id="no-results-message" class="no-results"></div>
+        </section>
+
+    <footer class="footer section">
+        <div class="footer__container container grid">
+            <div class="footer__content grid">
+                <div class="footer__data">
+                    <h3 class="footer__title">BudayaKu</h3>
+                    <p class="footer__description">
+                        Lahir dari tekad untuk merayakan, melestarikan, dan memajukan kekayaan budaya Indonesia.
+                    </p>
+                </div>
+                <div class="footer__data">
+                    <h3 class="footer__subtitle">What to See</h3>
+                    <ul>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link" id="explore-link">Explore</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="event.html#event" class="footer__link">Event</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="event.html" class="footer__link">Rekomendasi</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__data">
+                    <h3 class="footer__subtitle">About</h3>
+                    <ul>
+                        <li class="footer__item">
+                            <a href="index.html#warisan" class="footer__link">Warisan</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="index.html#nusantara" class="footer__link">Nusantara</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="about.html" class="footer__link">About BudayaKu</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__data">
+                    <h3 class="footer__subtitle">Support</h3>
+                    <div>
+                        <a href="" target="_blank" class="footer__social">
+                            <i class="ri-facebook-box-fill"></i>
+                        </a>
+                        <a href="" target="_blank" class="footer__social">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                        <a href="" target="_blank" class="footer__social">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+                        <a href="" target="_blank" class="footer__social">
+                            <i class="ri-youtube-fill"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__rights">
+                <p class="footer__copy">&#169; 2023 BudayaKu. All rigths reserved.</p>
+                <div class="footer__terms">
+                    <a href="" class="footer__terms-link">Terms & Agreements</a>
+                    <a href="" class="footer__terms-link">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal-container" id="modal-container">
+        <div class="modal-inner">
+            <div class="btn-close" onclick="closeModal(event)">
+                <ion-icon name="close-outline"></ion-icon>
+            </div>
+        </div>
+    </div>
+
+       <script src="assets/js/scrollreveal.min.js"></script>      
+       <script src="assets/js/main.js"></script>
+       <script src="assets/js/data_explore.js"></script>
+
+        <script type="text/javascript">
+            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+            (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+                s1.async=true;
+                s1.src='https://embed.tawk.to/65689f55bfb79148e5988a49/1hggasrqh';
+                s1.charset='UTF-8';
+                s1.setAttribute('crossorigin','*');
+                s0.parentNode.insertBefore(s1,s0);
+            })();
+        </script>
+<script>
+    let explorer = {
+    data: [
+            {
+                category: "Candi",
+                image: "https://i.ibb.co/CQKXzdY/borobudur.jpg",
+                name: "Candi Borobudur",
+                location: "Magelang, Jawa Tengah",
+                pageContent: "<p style='text-indent: 45px;'>Candi Borobudur terletak di Magelang, Jawa Tengah, Indonesia, dan merupakan kompleks kuil Buddha terbesar di dunia. Dibangun pada abad ke-8 oleh dinasti Syailendra, candi ini adalah mahakarya arsitektur dan seni relief Buddha. Dengan struktur piramida berundak yang mengesankan, Borobudur memiliki 504 arca Buddha dan lebih dari 2.600 panel relief yang menggambarkan ajaran Buddha serta kehidupan sehari-hari pada masa itu. <br> <p style='text-indent: 45px;'> Sebagai situs warisan dunia UNESCO, Candi Borobudur mencerminkan prestasi tinggi peradaban Indonesia kuno dan menjadi tujuan wisata spiritual dan budaya yang terkenal.</p>",
+            },
+            {
+                category: "Tari",
+                image: "https://i.ibb.co/Bq01LLt/kecak.jpg",
+                name: "Tari Kecak",
+                location: "Bali",
+                pageContent: "<p style='text-indent: 45px;'>Tari Kecak adalah tarian tradisional yang berasal dari Pulau Bali, Indonesia. Ciri khas tarian ini adalah penggunaan vokal (cak) yang dihasilkan oleh sekelompok penari laki-laki yang duduk melingkar. Tarian ini sering menggambarkan cerita epik Ramayana, di mana gerakan-gerakan tangan dan tubuh penari menciptakan visual yang dramatis dan mengesankan. <br> <p style='text-indent: 45px;'> Musik yang dihasilkan dari suara kolektif para penari memberikan nuansa magis dan ritualistik pada pertunjukan Tari Kecak, menjadikannya pengalaman budaya yang unik dan memukau bagi para penonton. </p>"
+            },
+            {
+                category: "Acara",
+                image: "https://i.ibb.co/JBH7WRz/ngaben.jpg",
+                name: "Ngaben",
+                location: "Bali",
+                pageContent: "<p style='text-indent: 45px;'>Ngaben adalah upacara kematian tradisional di Bali, Indonesia, yang merupakan bagian penting dari budaya Hindu Bali. Tujuannya adalah memberikan penghormatan kepada yang telah meninggal dan membantu rohnya menuju alam setelah mati, dianggap sebagai pembebasan dari siklus reinkarnasi. <br> <p style='text-indent: 45px;'> Proses Ngaben melibatkan serangkaian ritual, termasuk pemurnian jenazah, pembakaran mayat di atas api suci, dan penyelenggaraan prosesi menuju tempat pembakaran. Upacara ini diperkaya dengan tarian dan musik tradisional Bali, menciptakan atmosfer sakral dan hening. Bagi keluarga yang menyelenggarakan Ngaben, ini adalah bentuk penghormatan terakhir dan sarana pembebasan roh yang meninggal ke alam setelah mati.</p> <br> <p style='text-indent: 45px;'>Ngaben mencerminkan konsep Hindu tentang kehidupan dan kematian sebagai bagian dari siklus alam semesta. Meskipun penuh dengan kesedihan, upacara ini juga mencerminkan filosofi kehidupan dan spiritualitas dalam tradisi Hindu Bali.</p>",
+            },
+            {
+                category: "Warisan",
+                image: "https://i.ibb.co/RQZsTtJ/keris.jpg",
+                name: "Keris",
+                location: "Jawa",
+                pageContent: "<p style='text-indent: 45px;'>Keris, senjata tradisional Jawa, bukan hanya alat tempur tetapi juga simbol budaya, kebanggaan, dan warisan berharga. Dalam budaya Jawa, keris dianggap sebagai warisan keluarga yang membawa nilai sejarah dan spiritual tinggi, dengan keindahan seni ukir pada bilah, gandik, dan hulu menjadi ciri khas. Pamor, pola khas pada bilah, menciptakan dimensi mistik dan spiritual melalui penggabungan logam berbeda, diyakini memberikan kekuatan khusus.</p> <br> <p style='text-indent: 45px;'>Keris memiliki peran penting dalam upacara adat seperti pernikahan dan khitanan, menambah dimensi kebudayaan dan keagamaan yang mendalam. Sebagai simbol kehormatan dan kepemimpinan, pemilik keris bertanggung jawab menjaga keadilan dalam masyarakat. Dengan warangka dan sarung yang indah, keris bukan hanya senjata, melainkan juga simbol kearifan lokal dan warisan budaya yang diwariskan turun temurun.</p>",
+            },
+            {
+                category: "Tari",
+                image: "https://i.ibb.co/4WSdb5Z/turonggo-yakso.jpg",
+                name: "Turonggo Yakso",
+                location: "Trenggalek, Jawa Timur",
+                pageContent: "<p style='text-indent: 45px;'>Tari Turonggo Yakso, berasal dari Trenggalek, Jawa Timur, adalah perwujudan kekayaan budaya dan tradisi masyarakat lokal. Dipentaskan dalam berbagai konteks seperti upacara adat, seni, dan perayaan kebudayaan, tarian ini mengekspresikan keindahan khas Jawa Timur melalui gerakan lincah, ekspresi tangan yang indah, dan musik pengiring yang melibatkan kekayaan tradisional wilayah tersebut.</p> <br> <p style='text-indent: 45px';>Selain menjadi hiburan, Tari Turonggo Yakso berfungsi sebagai sarana untuk melestarikan dan memperkenalkan kekayaan budaya Jawa Timur kepada masyarakat, menjadikannya bagian yang tak terpisahkan dari warisan budaya yang dijaga dan dihargai oleh masyarakat Trenggalek.</p>",
+            },
+            {
+                category: "Warisan",
+                image: "https://i.ibb.co/xM4qwYC/angklung.jpg",
+                name: "Angklung",
+                location: "Jawa",
+                pageContent: "<p style='text-indent: 45px;'>Angklung, alat musik tradisional dari Sunda, Jawa Barat, terbuat dari bambu yang disusun vertikal dengan setiap tabung bambu menghasilkan satu nada. Dimainkan dengan cara digoyangkan, baik secara individu maupun kelompok, angklung sering dimainkan dalam ansambel, menciptakan harmoni yang indah. Fleksibilitasnya dalam menciptakan melodi dan pola suara yang kaya membuatnya terkenal.</p><br><p style='text-indent: 45px;'>Selain sebagai alat musik, angklung membawa nilai budaya dan pendidikan tinggi, digunakan dalam upacara adat, pertunjukan seni, dan acara kebudayaan di Indonesia. Diakui oleh UNESCO sebagai Warisan Kemanusiaan Nonbendawi, keunikan dan keindahan suara angklung menjadikannya salah satu alat musik tradisional Indonesia yang terkenal dan menjadi simbol warisan budaya yang dijaga dan dihargai secara global.</p>",
+            },
+            {
+                category: "Warisan",
+                image: "https://i.ibb.co/XLPvDDH/tenun.jpg",
+                name: "Tenun",
+                location: "Jawa",
+                pageContent: "<p style='text-indent: 45px;'>Kain tenun Jawa adalah keindahan warisan budaya Indonesia, khususnya di Pulau Jawa, dihasilkan melalui keterampilan tangan para pengrajin yang diwarisi dari generasi ke generasi. Setiap kain tenun Jawa mencerminkan keunikan dalam desain, pola, dan warna, menciptakan identitas kultural yang khas dari berbagai daerah di Jawa. </p><br><p style='text-indent: 45px;'>Proses pembuatannya melibatkan teknik tenun yang rumit, menuntut ketelitian dan keahlian tinggi untuk menghasilkan karya seni tekstil eksklusif. Bukan hanya pakaian, kain tenun Jawa juga merupakan medium ekspresi budaya dan keindahan estetika, sering digunakan dalam upacara adat, pernikahan, dan acara kebudayaan. Keunikan kain tenun Jawa, baik dalam desain maupun nilai budayanya, menjadikannya simbol penting dari warisan budaya Indonesia yang harus dijaga dan dihargai.</p>",
+            },
+            {
+                category: "Tari",
+                image: "https://i.ibb.co/CwpJKps/2d2a6bc9744a59b085477e090672fc4b.jpg",
+                name: "Tari Saman",
+                location: "Aceh, Sumatera",
+                pageContent: "<p style='text-indent: 45px;'> Tari Saman merupakan tarian tradisional yang berasal dari Aceh, Indonesia, dan dikenal sebagai salah satu tarian yang penuh dengan kekuatan dan semangat. Tarian ini dilakukan oleh sekelompok penari yang duduk berjejer dengan tempo musik yang cepat dan penuh dinamika. Uniknya, tari Saman tidak melibatkan gerakan kaki, namun lebih fokus pada gerakan tangan, kepala, dan tubuh bagian atas. Para penari menyusun tangan dan lengan mereka dalam berbagai pola yang kompleks, sering kali disertai dengan tepukan tangan dan ketukan tubuh, menciptakan harmoni gerakan yang serasi.</p><br><p style='text-indent: 45px;'> Tari Saman tidak hanya sekadar pertunjukan seni, melainkan juga memiliki makna budaya dan spiritual yang dalam. Tarian ini sering dipertunjukkan dalam berbagai acara adat, upacara keagamaan, dan festival budaya di Aceh. Selain itu, tari Saman juga telah meraih pengakuan internasional sebagai warisan budaya tak benda yang bernilai.</p>",
+            },
+            {
+                category: "Warisan",
+                image: "https://i.ibb.co/KNSjqB8/wayang.jpg",
+                name: "Wayang Kulit",
+                location: "Jawa",
+                pageContent: "<p style='text-indent: 45px;'>Wayang Kulit adalah seni pertunjukan tradisional Indonesia yang menggunakan boneka kulit yang diproyeksikan pada layar sederhana menggunakan sumber cahaya tradisional seperti lampu minyak atau lampu petromak. Pertunjukan ini biasanya didampingi oleh narasi yang diucapkan oleh seorang dalang yang juga menghidupkan suara dan gerakan karakter boneka. Wayang Kulit memiliki beragam tokoh, termasuk pahlawan, dewa, raksasa, dan makhluk mitologis lainnya, yang diambil dari epik-epik Hindu seperti Mahabharata dan Ramayana.</p><br><p style='text-indent: 45px;'>Wayang Kulit bukan hanya hiburan, melainkan juga medium untuk menyampaikan nilai-nilai budaya, etika, dan ajaran moral. Pertunjukan ini memainkan peran penting dalam masyarakat Indonesia, tidak hanya sebagai seni pertunjukan tradisional tetapi juga sebagai bentuk seni yang memperkaya warisan budaya dan spiritualitas. Wayang Kulit menjadi sarana untuk merayakan dan mewariskan nilai-nilai tradisional, sekaligus menghibur dan mendidik penonton dengan cerita-cerita epik yang sarat makna.</p>",
+            },
+            {
+                category: "Tari",
+                image: "https://i.ibb.co/7XsYzcH/ff24272b196603c382fc2840bbb3514e.jpg",
+                name: "Tari Piring",
+                location: "Minangkabau, Sumatera",
+                pageContent: "<p style='text-indent: 45px;'>Tari Piring adalah tarian tradisional Indonesia yang berasal dari Minangkabau, Sumatra Barat. Melibatkan gerakan dinamis para penari dengan membawa piring-piring logam, tarian ini menampilkan atraksi visual menakjubkan dengan irama musik khas. Selain sebagai hiburan seni, Tari Piring mencerminkan kekayaan budaya dan tradisi Minangkabau, sering dipertunjukkan dalam upacara adat, perayaan, dan festival budaya, menjadi sarana melestarikan nilai-nilai tradisional.</p>",
+            },
+            {
+                category: "Acara",
+                image: "https://i.ibb.co/RN0cMfj/karapan-sapi.jpg",
+                name: "Karapan Sapi",
+                location: "Madura, Jawa Timur",
+                pageContent: "<p style='text-indent: 45px;'>Kerapan Sapi Madura adalah tradisi unik di Pulau Madura, Indonesia, yang menggabungkan keterampilan mengendarai kerbau dengan kompetisi kecepatan. Dalam perhelatan ini, sepasang kerbau yang dihias dan dikendarai oleh seorang pengendara bersaing untuk mencapai garis finish tercepat di lintasan tanah. Para pengendara, yang disebut 'jawara' menunjukkan keahlian mengendalikan kerbaunya sambil berlomba untuk meraih kemenangan.</p><br><p style='text-indent: 45px;'>Kerapan Sapi Madura bukan hanya merupakan ajang kompetisi, tetapi juga mencerminkan tradisi dan kebanggaan masyarakat Madura. Even ini biasanya diadakan sebagai bagian dari perayaan lokal, seperti pesta rakyat atau festival tradisional. Kerapan Sapi menjadi daya tarik wisata yang memperkaya warisan budaya Indonesia, menampilkan kekompakan antara manusia, binatang, dan tradisi dalam sebuah ajang lomba yang menghibur dan mengakar kuat dalam kehidupan masyarakat Madura</p>",
+            },
+            {
+                category: "Tari",
+                image: "https://i.ibb.co/tpYNzk1/687b9ec233069817a524bdb13d1ba255.jpg",
+                name: "Tari Zapin",
+                location: "Riau, Sumatera",
+                pageContent: "<p style='text-indent: 45px;'>Tari Zapin adalah tarian tradisional yang berasal dari Kepulauan Riau, Indonesia. Tarian ini ditampilkan oleh sekelompok penari yang mengikuti irama musik zapin. Gerakan dalam Tari Zapin khas, menggabungkan elemen tarian dan seni vokal. Penari sering memakai kostum tradisional dan menggambarkan cerita atau nilai-nilai budaya melalui gerakan dan ekspresi mereka. Tari Zapin sering dipertunjukkan dalam berbagai acara, termasuk upacara adat, perayaan, dan acara kebudayaan.</p>",
+            },
+            {
+                category: "Tari",
+                image: "https://i.ibb.co/0fdcfDY/f4cafc00953e111620ed48f54938614b.jpg",
+                name: "Tari Sembah",
+                location: "Lampung, Sumatera",
+                pageContent: "<p style='text-indent: 45px;'>Tari Sembah merupakan tarian tradisional yang berasal dari Sumatra Selatan, Indonesia. Tarian ini memperlihatkan gerakan-gerakan yang anggun dan penuh makna, di mana para penari menyembah dengan langkah-langkah yang lemah gemulai. Penari biasanya memakai pakaian adat daerah Sumatra Selatan dan melengkapi penampilan mereka dengan aksesori tradisional. Tari Sembah seringkali diiringi oleh musik tradisional seperti gendang dan gambus.</p><br><p style='text-indent: 45px;'>Tarian ini bukan hanya sebagai bentuk seni, tetapi juga sebagai ekspresi penghormatan, dan sering dipertunjukkan dalam upacara adat, perayaan budaya, atau acara keagamaan, menjadi bagian penting dari kekayaan budaya Sumatra Selatan.</p>",
+            },
+            {
+                category: "Candi",
+                image: "https://i.ibb.co/kHnCMTB/image.png",
+                name: "Candi Jawi",
+                location: "Pasuruan ,Jawa Timur",
+                pageContent: "<p style='text-indent: 45px;'>Candi Jawi, atau Candi Prigen, terletak di Desa Candi Wates, Kecamatan Prigen, Kabupaten Pasuruan, Jawa Timur. Sebagai warisan budaya Hindu-Budha abad ke-13 Masehi, candi ini diyakini sebagai tempat pendharmaan bagi raja terakhir kerajaan Singasari, Kertanegara, yang wafat pada tahun 1292 Masehi. Arsitektur dan simbol pada candi mencerminkan penghormatan terhadap Kertanegara.</p><br><p style='text-indent: 45px;'>Dibangun sekitar tahun 1304 M, Candi Jawi dianggap sebagai sudharma haji atau candi kerajaan. Pemilihan lokasi di luar pusat kerajaan Singasari terkait dengan kepercayaan sinkretisme Siwa-Budha yang dianut oleh Kertanegara. Meskipun kerajaan Singasari mencapai kejayaannya di bawah pemerintahan Kertanegara, Candi Jawi dianggap sebagai basis pendukung raja tersebut oleh masyarakat setia di daerah tersebut.</p>",
+            },
+            {
+                category: "Tari",
+                image: "https://i.ibb.co/Pg02MyJ/2eeacc48af947b925a97e6c305089b92.jpg",
+                name: "Tari Jaipong",
+                location: "Jawa Barat",
+                pageContent: "<p style='text-indent: 45px;'>Tari Jaipong adalah tarian tradisional yang berasal dari Jawa Barat, Indonesia. Tarian ini diilhami oleh kekayaan seni dan budaya Sunda, menggabungkan gerakan tari tradisional dengan unsur-unsur modern. Jaipong mengutamakan gerakan tubuh yang dinamis, ekspressif, dan penuh semangat, seringkali disertai dengan irama musik yang khas.</p><br><p style='text-indent: 45px;'>Tari Jaipong awalnya dikembangkan oleh seniman Gugum Gumbira pada tahun 1960-an sebagai bentuk seni rakyat yang menggabungkan elemen tarian tradisional dengan musik modern. Kini, Jaipong menjadi populer di berbagai pertunjukan seni dan acara kebudayaan di Indonesia, serta menjadi bagian yang integral dalam pelestarian dan pengembangan warisan seni tradisional Sunda.</p>",
+            },
+            {
+                category: "Candi",
+                image: "https://i.ibb.co/JRpFsK7/image.png",
+                name: "Candi Singosari",
+                location: "Malang, Jawa Timur",
+                pageContent: "<p style='text-indent: 45px;'>Candi Singosari adalah kompleks candi yang terletak di Desa Candirenggo, Kecamatan Singosari, Kabupaten Malang, Jawa Timur, Indonesia. Candi ini berasal dari masa Kerajaan Singosari pada abad ke-13 dan dianggap sebagai peninggalan sejarah yang penting.</p><br><p style='text-indent: 45px;'>Candi Singosari terdiri dari beberapa candi kecil yang saling berdekatan, termasuk Candi Singosari, Candi Jago, dan Candi Kidal. Candi-candi ini mencerminkan gaya arsitektur candi Hindu, dengan relief-relief yang menggambarkan adegan-kehidupan sehari-hari, tokoh-tokoh epik, dan ajaran-ajaran agama Hindu.</p>",
+            },
+            {
+                category: "Warisan",
+                image: "https://i.ibb.co/jTzbywh/image.png",
+                name: "Pencak Silat",
+                location: "Indonesia",
+                pageContent: "<p style='text-indent: 45px;'>Pencak Silat adalah seni bela diri tradisional Indonesia yang mencakup berbagai gaya dan aliran, menonjolkan kombinasi gerakan elegan, efektif, dan filosofi mendalam. Kesenian ini tidak hanya berfokus pada aspek fisik bela diri, tetapi juga melibatkan unsur seni, keseimbangan, dan spiritualitas. Pencak Silat merupakan warisan budaya yang mencerminkan nilai-nilai kehidupan, kearifan lokal, dan identitas nasional Indonesia. </p><br><p style='text-indent: 45px;'>Dalam praktiknya, Pencak Silat melibatkan latihan gerakan, teknik bertarung, dan strategi pertahanan yang unik pada setiap aliran. Selain sebagai seni bela diri, Pencak Silat juga dianggap sebagai olahraga kompetitif dan pertunjukan seni, dengan keberagaman gaya dan aliran yang menjadikannya warisan tak benda UNESCO pada tahun 2019.</p>",
+            },
+            {
+                category: "Warisan",
+                image: "https://i.ibb.co/6Yc16c8/Image.png",
+                name: "Tifa",
+                location: "Papua",
+                pageContent: "<p style='text-indent: 45px;'>Tifa adalah alat musik tradisional yang berasal dari Papua, Indonesia. Merupakan instrumen perkusi, tifa terbuat dari kayu atau tanduk binatang yang dibentuk menyerupai tabung atau terompet besar. Alat musik ini dimainkan dengan cara dipukul atau dipukul dengan menggunakan tangan, batang kayu, atau bahkan kulit binatang.</p><br><p style='text-indent: 45px;'>Tifa memiliki peran penting dalam budaya Papua, digunakan dalam berbagai upacara adat, ritual, dan pertunjukan seni tradisional. Suara yang dihasilkan dari tifa memiliki kekuatan simbolis dan sering digunakan untuk membangkitkan semangat, menyampaikan pesan, atau sebagai elemen pengiring dalam tarian dan nyanyian tradisional. Keberadaan tifa tidak hanya sebagai alat musik, tetapi juga sebagai bagian integral dari warisan budaya Papua yang kaya dan beraneka ragam.</p>",
+            },
+            {
+                category: "Tari",
+                image: "https://i.ibb.co/2jNnK45/Image.png",
+                name: "Tari Caci",
+                location: "Nusa Tenggara Timur",
+                pageContent: "<p style='text-indent: 45px;'>Caci merupakan seni bela diri tradisional Nusa Tenggara Timur (NTT), Indonesia, yang dikenal sebagai 'Caci Fua.'' Seni ini melibatkan pertarungan antar-dua orang dengan menggunakan cambuk rotan atau 'caci' dan perisai sebagai perlindungan. Lebih dari sekadar pertarungan, Caci adalah bagian dari upacara adat dan festival budaya di NTT, menunjukkan keberagaman dan memperingati momen penting seperti pernikahan.</p><br><p style='text-indent: 45px;'>Selain sebagai tradisi hiburan, Caci mencerminkan nilai-nilai kebersamaan, keadilan, dan keterampilan bela diri, mengandung pesan kearifan lokal dan etika tinggi, dan memperkaya warisan budaya NTT.</p>",
+            },
+            {
+                category: "Warisan",
+                image: "https://i.ibb.co/WDycbyF/Image.png",
+                name: "Papeda",
+                location: "Papua",
+                pageContent: "<p style='text-indent: 45px;'>Papeda adalah hidangan tradisional Papua yang terbuat dari sagu. Sagu direbus hingga mengental dan kemudian diolah menjadi bubur padat. Hidangan ini umumnya disajikan sebagai pendamping untuk berbagai hidangan lauk seperti ikan, daging, atau sayuran. Papeda biasanya dinikmati dengan dicocolkan ke dalam saus atau kuah kental yang terbuat dari ikan atau daging yang telah diolah dengan bumbu khas Papua.</p><br><p style='text-indent: 45px;'>Papeda bukan hanya sekadar makanan, melainkan juga bagian integral dari kehidupan sehari-hari masyarakat Papua. Proses pembuatannya memerlukan keterampilan khusus dalam mengolah sagu sehingga menghasilkan tekstur yang tepat.</p>",
+            },
+            {
+                category: "Tari",
+                image: "https://i.ibb.co/w0626WL/Image.png",
+                name: "Tari Mpaa Lenggogo",
+                location: "Nusa Tenggara Barat",
+                pageContent: "<p style='text-indent: 45px;'>Tari Lenggo adalah bagian integral dari acara adat Hanta Ua Pua, khususnya saat rombongan Penghulu Melayu memasuki pelataran istana kerajaan. Dalam pertunjukan ini, 4 hingga 6 penari Tari Lenggo, baik dari kelompok Melayu maupun Mbojo, mendampingi Penghulu Melayu dengan gerakan lemah gemulai selama perjalanan ke istana. Konsep tarian menekankan aspek penyambutan, dengan gerakan penari yang elegan dan selaras dengan musik tradisional Bima, termasuk gendang besar, silu, gong, dan tawa-tawa. Musik pengiringnya memiliki ritme lembut, memberikan harmoni dengan gerakan penari.</p><br><p style='text-indent: 45px;'>Tari Lenggo tidak hanya menonjolkan gerakan penari tetapi juga melibatkan alat musik tradisional yang menciptakan atmosfer penyambutan yang khusyuk dan penuh keindahan, menjadikannya bagian tak terpisahkan dari tradisi budaya Bima.</p>",
+            },
+            {
+                category: "Tari",
+                image: "https://i.ibb.co/n0NQ9bK/76787993e601dc92bf05761093426e0d.jpg",
+                name: "Tari Mandau",
+                location: "Kalimantan Tengah",
+                pageContent: "<p style='text-indent: 45px;'>Tari Mandau merupakan tarian tradisional yang berasal dari Kalimantan Tengah, Indonesia. Tarian ini menggambarkan keberanian dan kegagahan para pejuang Dayak yang menggunakan senjata tradisional Mandau, sejenis parang khas Dayak. Gerakan dalam Tari Mandau mencerminkan semangat juang dan kelincahan dalam pertempuran.</p><br><p style='text-indent: 45px;'>Para penari sering mengenakan pakaian adat Dayak lengkap dengan hiasan kepala dan ukiran khas, menciptakan kesan yang kuat dan penuh makna dari warisan budaya Dayak. Tari Mandau sering ditampilkan dalam berbagai acara budaya, upacara adat, atau festival untuk memperkenalkan dan mempertahankan warisan seni dan budaya Kalimantan Tengah.</p>",
+            },
+            {
+                category: "Warisan",
+                image: "https://i.ibb.co/GTSnv2B/image.png",
+                name: "Rendang",
+                location: "Sumatera Barat",
+                pageContent: "<p style='text-indent: 45px;'>Rendang adalah hidangan masakan tradisional Indonesia yang berasal dari Minangkabau, Sumatra Barat. Hidangan ini terkenal karena kelezatan dan kekayaan rempah-rempahnya. Rendang umumnya terbuat dari daging sapi yang dimasak dalam santan kelapa, kemudian dibumbui dengan campuran rempah-rempah seperti serai, daun jeruk, cabai, lengkuas, jahe, bawang merah, bawang putih, dan berbagai rempah lainnya. </p><br><p style='text-indent: 45px;'>Proses memasak rendang biasanya memakan waktu yang lama dan melibatkan pengurangan air hingga bumbu meresap ke dalam daging, menciptakan tekstur yang kaya, empuk, dan bumbu yang meresap hingga ke inti daging. Rendang sering dianggap sebagai salah satu masakan daging yang paling lezat di dunia dan telah mendapat pengakuan sebagai 'Masakan Dunia' oleh UNESCO pada tahun 2011.</p>",
+            },
+            {
+                category: "Tari",
+                image: "https://i.ibb.co/VMYxjSJ/303a0051657665ee9326217d539959bb.jpg",
+                name: "Tari Burung Enggang",
+                location: "Kalimantan Timur",
+                pageContent: "<p style='text-indent: 45px;'>Tari Burung Enggang, atau juga dikenal sebagai Tari Enggang, merupakan tarian tradisional yang berasal dari Kalimantan Timur, Indonesia. Tarian ini diilhami oleh gerakan dan karakteristik burung Enggang, yang juga dikenal sebagai burung enggang kalimantan atau hornbill. Burung Enggang memiliki paruh yang besar dan menarik, dan tarian ini mencoba menggambarkan keanggunan dan keelokan burung tersebut.</p><br><p style='text-indent: 45px;'>Tarian ini melibatkan gerakan yang lemah gemulai, seiring dengan irama musik dan seringkali disertai dengan kostum yang mencerminkan warna dan bentuk burung Enggang. Tari Burung Enggang sering dipertunjukkan dalam berbagai upacara adat, festival, atau acara budaya sebagai bagian dari warisan seni dan budaya Kalimantan Timur.</p>",
+            },
+            {
+                category: "Warisan",
+                image: "https://i.ibb.co/b7K1zdr/Image.png",
+                name: "Ewa Muna",
+                location: "Sulawesi Tenggara",
+                pageContent: "<p style='text-indent: 45px;'>Silat ewa Wuna merupakan seni bela diri silat dengan teknik yang khas Kabupaten Muna. Silat ini menjadi bagian dari seni tari yang dikembangkan dari generasi ke generasi. Ewa Wuna merupakan salah satu kekayaan budaya yang tidak hanya memiliki nilai-nilai historis melainkan juga terkandung spirit, kearifan lokal, bahkan sikap hidup. Silat khas Muna ini memadukan antara gerakan seni dan bela diri.</p><br><p style='text-indent: 45px;'> Dalam praktiknya, ewa Wuna dapat menggunakan senjata, berupa keris, parang, tombak, ataupun hanya tangan kosong. Permainan ini diiringi oleh musik rambu Wuna. Seluruh pemain berusaha saling menyerang akan tetapi terhalang oleh seorang pemain petombi (pemegang bendera) sehingga seluruh pemain terhindar dari bahaya. Pada saat ini ewa Wuna sudah populer sebagai tradisi yang dipertunjukkan saat ada pesta adat atau penyambutan tamu.</p>",
+            },
+            {
+                category: "Tari",
+                image: "https://i.ibb.co/F6WnL73/image.png",
+                name: "Tari Kipas Pakarena",
+                location: "Sulawesi Selatan",
+                pageContent: "<p style='text-indent: 45px;'>Tari Kipas Pakarena adalah tarian tradisional yang berasal dari Sulawesi Selatan, Indonesia, khususnya dari masyarakat Bugis. Tarian ini merupakan bagian dari upacara adat dan sering dipentaskan dalam acara pernikahan atau upacara resmi lainnya. Tari Kipas Pakarena biasanya dilakukan oleh sekelompok penari wanita yang memegang kipas.</p><br><p style='text-indent: 45px;'>Gerakan dalam tarian ini menggambarkan keanggunan, keelokan, dan kehalusan gerakan para penari. Kipas yang dipegang oleh penari menjadi salah satu elemen penting yang menambah keindahan tarian ini. Busana yang digunakan para penari juga kaya dengan warna dan detail, mencerminkan kekayaan budaya dan tradisi masyarakat Bugis. Tari Kipas Pakarena tidak hanya merupakan bentuk seni pertunjukan, tetapi juga membawa makna dan nilai-nilai sosial dalam konteks budaya Bugis.</p>",
+            },
+            {
+                category: "Acara",
+                image: "https://i.ibb.co/qdHvz5C/Image.png",
+                name: "Bakar Batu",
+                location: "Papua",
+                pageContent: "<p style='text-indent: 45px;'>Bakar Batu, atau 'Mbakar Batu,'' adalah tradisi kuliner di Papua, Indonesia, di mana makanan seperti daging, ikan, ubi, dan sayuran dimasak di atas batu panas yang dipanaskan oleh api. Proses ini melibatkan penumpukan batu besar di atas kayu yang dinyalakan. Makanan yang telah disiapkan dibungkus dengan daun pisang atau anyaman daun kelapa sebelum diletakkan di atas batu panas untuk matang.</p><br><p style='text-indent: 45px;'>Tradisi ini bukan hanya tentang memasak, melainkan juga merupakan momen sosial dan budaya di mana masyarakat berkumpul, mencerminkan kekayaan budaya dan kehidupan masyarakat Papua yang erat terhubung dengan alam dan tradisi lokal mereka. Bakar Batu menjadi simbol kebersamaan, kearifan lokal, dan memperkuat ikatan sosial dan budaya di komunitas.</p>",
+            },
+            {
+                category: "Tari",
+                image: "https://i.ibb.co/Dzxh5p8/Image.png",
+                name: "Tari Balumpa",
+                location: "Sulawesi Tenggara",
+                pageContent: "<p style='text-indent: 45px;'>Tari Balumpa meruapakan tari tradisional yang berasal dari daerah Wakatobi, Sulawesi Tenggara yang menceritakan tentang sekolompok gadis yang sedang berdendang diiringi lagu daerah dan musik gambus dengan penuh keceriaan mereka berdendang dan menari dengan hati gembira dan tulus.</p>",
+            },
+        ],
+    };
+
+    let popularContainer = document.createElement("div");
+    popularContainer.classList.add("popular_container", "container", "grid");
+
+    document.getElementById("explorer").appendChild(popularContainer);
+
+    for (let i of explorer.data) {
+    let article = document.createElement("article");
+    article.classList.add("popular_card", i.category.toLowerCase());
+
+    let linkArticle = document.createElement("a");
+    article.setAttribute("data-item", JSON.stringify(i));
+    linkArticle.addEventListener("click", () => openModal(i));
+
+    let imgContainer = document.createElement("div");
+    imgContainer.classList.add("popular_image");
+
+    let image = document.createElement("img");
+    image.setAttribute("src", i.image);
+    image.classList.add("popular_img");
+
+    image.style.maxWidth = "100%";
+    image.style.height = "auto";
+    image.style.width = "300px";
+
+    let shadow = document.createElement("div");
+    shadow.classList.add("popular_shadow");
+
+    imgContainer.appendChild(image);
+    imgContainer.appendChild(shadow);
+
+    linkArticle.appendChild(imgContainer);
+    article.appendChild(linkArticle);
+
+    let title = document.createElement("h2");
+    title.classList.add("popular_title");
+    title.innerText = i.name;
+
+    title.addEventListener("click", () => openModal(i));
+
+    article.appendChild(title);
+
+    let location = document.createElement("div");
+    location.classList.add("popular_location");
+
+    let mapPinIcon = document.createElement("i");
+    mapPinIcon.classList.add("ri-map-pin-line");
+
+    let locationSpan = document.createElement("span");
+    locationSpan.innerText = i.location;
+
+    location.appendChild(mapPinIcon);
+    location.appendChild(locationSpan);
+
+    article.appendChild(location);
+    popularContainer.appendChild(article);
+    }
+
+    function openModal(item) {
+    console.log("Opening modal for item:", item);
+
+    let modalContainer = document.getElementById("modal-container");
+    modalContainer.innerHTML = ""; 
+
+    let modal = document.createElement("div");
+    modal.classList.add("modal");
+
+    let closeModalButton = document.createElement("span");
+    closeModalButton.classList.add("close-modal");
+    closeModalButton.innerHTML = "&times;";
+    closeModalButton.addEventListener("click", () => closeModal());
+
+    let modalContent = document.createElement("div");
+    modalContent.classList.add("modal-content");
+
+    modalContent.innerHTML = `
+        <div class="modal-image">
+                <img src="${item.image}" alt="${item.name}" class="modal-img">
+        </div>
+        <div class="modal-description">
+                <h2>${item.name}</h2>
+                <p>${item.pageContent}</p>
+        </div>
+    `;
+
+    modal.appendChild(closeModalButton);
+    modal.appendChild(modalContent);
+    modalContainer.appendChild(modal);
+
+    modalContainer.classList.add("active-modal");
+    }
+
+    function closeModal() {
+    let modalContainer = document.getElementById("modal-container");
+    modalContainer.classList.remove("active-modal");
+    document.body.style.overflow = "auto";
+    event.preventDefault();
+    }
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+        closeModal();
+        }
+    });
+
+    let article = document.createElement("article");
+    article.classList.add("popular_card", i.category.toLowerCase());
+    article.setAttribute("data-item", JSON.stringify(i));
+
+    article.addEventListener("click", () => openModal(i));
+
+    function closeModal() {
+    let modalContainer = document.getElementById("modal-container");
+    modalContainer.classList.remove("active-modal");
+    document.body.style.overflow = "auto";
+    event.preventDefault();
+    }
+
+    function filterExplore(value) {
+        let buttons = document.querySelectorAll(".button-value");
+        buttons.forEach((button) => {
+            if (value.toUpperCase() === button.innerText.toUpperCase()) {
+                button.classList.add("active");
+            } else {
+                button.classList.remove("active");
+            }
+        });
+
+        let elements = document.querySelectorAll(".popular_card");
+        elements.forEach((element) => {
+            if (value === "all") {
+                element.classList.remove("hide");
+            } else {
+                if (element.classList.contains(value.toLowerCase())) {
+                    element.classList.remove("hide");
+                } else {
+                    element.classList.add("hide");
+                }
+            }
+        });
+    }
+
+    document.getElementById("search-input").addEventListener("input", (event) => {
+    if (event.key === "Enter") {
+        filterBySearch();
+    }
+    });
+
+    function filterBySearch(searchInput) {
+        if (searchInput === undefined) {
+            searchInput = document.getElementById("search-input").value.trim().toUpperCase();
+        }
+
+        let elements = document.querySelectorAll(".popular_card");
+        let noResultsMessage = document.getElementById("no-results-message");
+
+        let foundResults = false;
+
+        elements.forEach((element) => {
+            let title = element.querySelector(".popular_title").innerText.toUpperCase();
+            let category = element.classList[1].toUpperCase();
+            let location = element.querySelector(".popular_location span").innerText.toUpperCase();
+
+            let additionalContent = title + " " + category + " " + location;
+
+            if (searchInput === "" || additionalContent.includes(searchInput)) {
+                element.classList.remove("hide");
+                foundResults = true;
+            } else {
+                element.classList.add("hide");
+            }
+        });
+
+        if (foundResults) {
+            noResultsMessage.style.display = "none";
+        } else {
+            let container = document.createElement("div");
+
+            let text = document.createElement("span");
+            text.innerText = "Data Not Found";
+
+            let icon = document.createElement("span");
+            icon.classList.add("material-icons", "larger-icon");
+            icon.innerText = "search_off";
+
+            container.appendChild(icon);
+            container.appendChild(text);
+
+            noResultsMessage.innerHTML = '';
+            noResultsMessage.appendChild(container);
+
+            container.style.display = "flex";
+            container.style.flexDirection = "column";
+            container.style.alignItems = "center";
+            noResultsMessage.style.display = "block";
+        }
+
+        let style = document.createElement("style");
+        style.innerHTML = ".larger-icon { font-size: 3em; }";
+        document.head.appendChild(style);
+    }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var exploreLink = document.getElementById("explore-link");
+
+            if (exploreLink) {
+                exploreLink.addEventListener("click", function (event) {
+                    event.preventDefault();
+
+                    document.querySelector("#explore").scrollIntoView({
+                        behavior: "smooth"
+                    });
+                });
+            }
+        });
+    </script>
+  </body>
+</html>

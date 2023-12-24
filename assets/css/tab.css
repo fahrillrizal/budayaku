@@ -1,0 +1,120 @@
+@import "font.css";
+
+.event_animation {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.event_container {
+    height: 300px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+}
+
+.event_card {
+    width: 150px;
+    background-size: cover;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 2rem;
+    margin: 0 10px;
+    display: flex;
+    align-items: flex-end;
+    transition: .6s cubic-bezier(.28,-0.03,0,.99);
+    box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.8);
+}
+
+.event_row {
+    color: white;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.icon {
+    backdrop-filter: blur(24px);
+    --webkit-backdrop-filter: blur(24px);
+    color: #FFF;
+    border-radius: 2rem;
+    width: 7.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+.event_description {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    height: 80px;
+    width: 300px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition-delay: .3s;
+    transition: all .3s ease;
+}
+
+.event_description p {
+    color: #b0b0ba;
+    padding-top: 5px;
+}
+
+.input_event {
+    display: none;
+}
+
+input:checked + label {
+    width: 500px;
+}
+
+input:checked + label .event_description {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* popular event */
+.event_card[for="popular-1"] {
+    background-image: url('https://i.ibb.co/2hmnyWK/image.png');
+}
+.event_card[for="popular-2"] {
+    background-image: url('https://i.ibb.co/8jQKntJ/image.png');
+}
+.event_card[for="popular-3"] {
+    background-image: url('https://i.ibb.co/PQmK5kH/image.png');
+}
+.event_card[for="popular-4"] {
+    background-image: url('https://i.ibb.co/x2zpVVD/image.png');
+}
+
+/* lainnya */
+.event_card[for="maret-1"] {
+    background-image: url('https://i.ibb.co/8bb5hF6/image.png');
+}
+.event_card[for="maret-2"] {
+    background-image: url('https://i.ibb.co/N1JhxBY/image.png');
+}
+.event_card[for="maret-3"] {
+    background-image: url('https://i.ibb.co/HgwHwNK/image.png');
+}
+.event_card[for="maret-4"] {
+    background-image: url('https://i.ibb.co/KNtBFt1/image.png');
+}
+
+/* Juni */
+.event_card[for="juni-1"] {
+    background-image: url('https://i.ibb.co/wrCrtsC/image.png');
+}
+.event_card[for="juni-2"] {
+    background-image: url('https://i.ibb.co/RYgqq5x/image.png');
+}
+.event_card[for="juni-3"] {
+    background-image: url('https://i.ibb.co/XLPvDDH/tenun.jpg');
+}
+.event_card[for="juni-4"] {
+    background-image: url('https://i.ibb.co/XLPvDDH/tenun.jpg');
+}
